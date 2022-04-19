@@ -2,6 +2,7 @@ import { useState } from "react";
 import { 
     NavContainer,
     NavLink,
+    Logo,
     NavLinkContainer,
     NavInnerContainer,
     LeftContainer,
@@ -32,7 +33,7 @@ const Nav = () => {
                     </NavLinkContainer>
                 </LeftContainer>
                 <RightContainer>
-                    <h2>Test</h2>
+                    <Logo>Test</Logo>
                 </RightContainer>
             </NavInnerContainer>
             {openNav && (

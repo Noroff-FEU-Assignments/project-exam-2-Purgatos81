@@ -1,6 +1,14 @@
+import { HeroBanner, 
+    HomeBody } from "../styles/HomeStyles";
+
 const Home = () => {
     return (
-        <h1>Home</h1>
+        <>
+        <HomeBody>
+            <h1>Test yo</h1>
+        </HomeBody>
+        
+        </>
     );
 };
 
