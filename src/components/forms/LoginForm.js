@@ -8,12 +8,10 @@ import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
 
 const LoginForm = () => {
-    // navigation hook
     const navigate = useNavigate();
   
     const [auth, setAuth] = useContext(AuthContext);
-  
-    // YUP
+
     const {
       register,
       handleSubmit,
@@ -22,23 +20,18 @@ const LoginForm = () => {
       resolver: yupResolver(userLoginSchema),
     });
   
-    // Login function, accepts data from YUP object
     const loginUser = async (formData) => {
       const responseData = await axios.post(AUTH_URL, {
-        // use YUP Object data as request body
         identifier: formData.email,
         password: formData.password,
       });
   
       console.log('Response Data: ', responseData);
   
-      // Save JWT response to localstorage
       setAuth(responseData.data);
-      // redirect to admin page
       navigate('/admin');
     };
   
-    // handleSubmit
     const onSubmit = (formData) => {
       console.log('Form Data: ', formData);
   
@@ -46,7 +39,6 @@ const LoginForm = () => {
       console.log(auth);
     };
   
-    // Render page
     return (
       <>
         <form onSubmit={handleSubmit(onSubmit)}>

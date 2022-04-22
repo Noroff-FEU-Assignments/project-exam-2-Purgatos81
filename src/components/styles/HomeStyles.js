@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 
-export const HomeBody = styled.body`
+export const HomeBody = styled.div`
 background-image: url(images/Banner_Large2.jpg);
 height: 100vh;
 background-size: cover;
