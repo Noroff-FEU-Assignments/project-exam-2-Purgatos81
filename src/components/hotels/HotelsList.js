@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import TargetHotel from "./HotelTarget";
 import { HotelsAPI } from "../utils/Api";
 
 function HotelList() {
@@ -13,7 +14,7 @@ function HotelList() {
 
                 if (response.ok) {
                     const json = await response.json();
-                    console.log(json);
+                    console.log(json.data);
                     setHotels(json.data);
                 } else {
                     setError("An error occured");
@@ -39,14 +40,17 @@ function HotelList() {
     return (
         <>
             {hotels.map(function (hotel) {
-                console.log(hotel.attributes);
-                return <div key={hotel.id}>
-                    <h2>{hotel.attributes.Name}</h2>
-                    <p>{hotel.attributes.Description}</p>
-                </div>;
+                console.log(hotel);
+                const { id, Name, Description } = hotel
+                return <TargetHotel key={hotel.id} id={hotel.id} Name={hotel.attributes.Name} Description={hotel.attributes.Description} />;
             })}
         </>
     );
 }
 
 export default HotelList;
+
+/*                return <div key={hotel.id}>
+<h2>{hotel.attributes.Name}</h2>
+<p>{hotel.attributes.Description}</p>
+</div>; */
