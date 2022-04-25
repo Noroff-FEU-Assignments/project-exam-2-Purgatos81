@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-function TargetSearchHotel({ id, Name, Description }) {
+function TargetSearchHotel({ id, Name, }) {
     return (
         <Link to={`details/${id}`}>
             <h4>{Name}</h4>

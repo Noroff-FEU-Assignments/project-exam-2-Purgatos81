@@ -11,7 +11,7 @@ const Home = () => {
         <>
         <HomeBody>
             <h1>Search for your Hotel</h1>
-            <SearchBar placeholder="Search Hotel..."/>
+            <SearchBar placeholder="Search Hotel..." />
         </HomeBody>
         
         </>

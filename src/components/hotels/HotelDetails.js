@@ -26,8 +26,8 @@ function HotelDetails() {
 
 					if (response.ok) {
 						const json = await response.json();
-						console.log(json);
-						setHotel(json);
+						console.log(json.data);
+						setHotel(json.data);
 					} else {
 						setError("An error occured");
 					}

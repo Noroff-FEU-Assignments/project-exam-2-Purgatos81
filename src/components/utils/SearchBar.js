@@ -4,6 +4,7 @@ import { SearchBarContainer, SearchInputs, SearchTextBox, DataResults, StyledSea
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 import HotelSearchList from "../hotels/HotelSearchList";
+import TargetSearchHotel from "../hotels/HotelSearchTarget";
 
 function SearchBar({ placeholder, hotels }) {
 
@@ -26,17 +27,35 @@ function SearchBar({ placeholder, hotels }) {
 
     const clearInput = () => {
         setFilteredHotels([]);
+        setWordEntered("");
     }
     return (
         <SearchBarContainer>
             <SearchInputs>
-                <SearchTextBox type="text" placeholder={placeholder} value={wordEntered} onChange={handleFilter} />
+                <SearchTextBox 
+                    type="text" 
+                    placeholder={placeholder} 
+                    value={wordEntered} 
+                    onChange={handleFilter} 
+                />
                 <StyledSearchIcon>
-                    {filteredHotels.length === 0 ? <SearchIcon /> : <CloseIcon onClick={clearInput} />}
+                    {filteredHotels.length === 0 ? ( 
+                        <SearchIcon />
+                    ) : (
+                        <CloseIcon onClick={clearInput} /> 
+                    )}
                 </StyledSearchIcon>
             </SearchInputs>
             {filteredHotels.length != 0 && (
-            <DataResults><HotelSearchList /></DataResults>
+            <DataResults>
+                {filteredHotels.map((hotel) => {
+                                    console.log(hotel);
+                    return (
+                        <TargetSearchHotel key={hotel.id} id={hotel.id} Name={hotel.attributes.Name} />
+                    )
+                })}
+
+            </DataResults>
             )}
         </SearchBarContainer>
     );
