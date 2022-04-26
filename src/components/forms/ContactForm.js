@@ -3,6 +3,16 @@ import { useState } from "react";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { ContactSchema } from  "../utils/yupSchemas";
+import { 
+    ContactFormPageContainer, 
+    StyledContactForm, 
+    HeadingContainer, 
+    ContactHeading,
+    StyledInput,
+    StyledTextarea,
+    StyledContactButton,
+    StyledContactLabel,
+    StyledAsterix } from "../styles/ContactStyles";
 
 function ContactForm() {
     const {register, handleSubmit, formState: { errors } } = useForm({
@@ -16,18 +26,28 @@ function ContactForm() {
     console.log(errors);
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <input {...register("name")} placeholder='Your name...'/>
-            {errors.name && <span>{errors.name.message}</span>}
+        <ContactFormPageContainer>
+            <HeadingContainer>
+                <ContactHeading>Contact Us</ContactHeading>
+            </HeadingContainer>
 
-            <input {...register("email")} placeholder='Your email...'/>
-            {errors.email && <span>{errors.email.message}</span>}
+            <StyledContactForm onSubmit={handleSubmit(onSubmit)}>
+                <StyledContactLabel HTMLFor="contactName">Name<StyledAsterix> *</StyledAsterix></StyledContactLabel>
+                <StyledInput id="contactName" {...register("name")} placeholder='Your name...'/>
+                {errors.name && <span>{errors.name.message}</span>}
 
-            <textarea {...register("message")} placeholder='Your message...'/>
-            {errors.message && <span>{errors.message.message}</span>}
+                <StyledContactLabel HTMLFor="contacEmail">Email<StyledAsterix> *</StyledAsterix></StyledContactLabel>
+                <StyledInput id="contacEmail" {...register("email")} placeholder='Your email...'/>
+                {errors.email && <span>{errors.email.message}</span>}
 
-            <button>Send</button>
-        </form>
+                <StyledContactLabel HTMLFor="contacMessage">Message<StyledAsterix> *</StyledAsterix></StyledContactLabel>
+                <StyledTextarea id="contacMessage"{...register("message")} placeholder='Your message...'/>
+                {errors.message && <span>{errors.message.message}</span>}
+
+                <StyledContactButton>Send</StyledContactButton>
+            </StyledContactForm>
+
+        </ContactFormPageContainer>
     );
 }
 

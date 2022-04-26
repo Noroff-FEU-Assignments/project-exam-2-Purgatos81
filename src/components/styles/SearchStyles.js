@@ -21,7 +21,7 @@ export const SearchTextBox = styled.input`
     border-bottom-right-radius: 0px;
     font-size: 18px;
     padding: 15px;
-    height: 30px;
+    height: 60px;
     width: 300px;
 `;
 

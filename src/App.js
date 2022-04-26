@@ -8,11 +8,13 @@ import Login from './components/pages/Login';
 import Nav from './components/navigation/Nav';
 import Footer from './components/layouts/Footer';
 import { AuthProvider } from './components/context/AuthContext';
+import GlobalStyle from './components/styles/GlobalStyles';
 
 function App() {
   return (
     <>
       <AuthProvider>
+        <GlobalStyle />
         <Router>
           <Nav />
           <Routes>
