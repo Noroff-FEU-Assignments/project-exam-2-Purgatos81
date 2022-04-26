@@ -6,7 +6,17 @@ import { AUTH_URL } from "../utils/Api";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
-
+import {
+  LoginFormPageContainer,
+  LoginHeadingContainer,
+  LoginContactHeading,
+  StyledLoginForm,
+  StyledLoginLabel,
+  StyledLoginAsterix,
+  StyledLoginInput,
+  StyledLoginButton
+} from "../styles/LoginStyles";
+ 
 const LoginForm = () => {
     const navigate = useNavigate();
   
@@ -40,21 +50,25 @@ const LoginForm = () => {
     };
   
     return (
-      <>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <input {...register('email')} placeholder='Your email...' />
+      <LoginFormPageContainer>
+        <LoginHeadingContainer>
+          <LoginContactHeading>Login Form</LoginContactHeading>
+        </LoginHeadingContainer>
+        <StyledLoginForm onSubmit={handleSubmit(onSubmit)}>
+          <StyledLoginLabel HTMLFor="loginEmail">Email<StyledLoginAsterix> *</StyledLoginAsterix></StyledLoginLabel>
+          <StyledLoginInput id="loginEmail" {...register('email')} placeholder='Your email...' />
           {errors.email && <span>{errors.email.message}</span>}
-  
-          <input
+          <StyledLoginLabel HTMLFor="loginPassword">Password<StyledLoginAsterix> *</StyledLoginAsterix></StyledLoginLabel>
+          <StyledLoginInput id="loginPassword"
             {...register('password')}
             type='password'
             placeholder='Your password...'
           />
           {errors.password && <span>{errors.password.message}</span>}
   
-          <button>Send</button>
-        </form>
-      </>
+          <StyledLoginButton>Send</StyledLoginButton>
+        </StyledLoginForm>
+      </LoginFormPageContainer>
     );
   };
   
