@@ -6,7 +6,7 @@ export const SearchBarContainer = styled.div`
 `;
 
 export const SearchInputs = styled.div`
-    margin-top: 105px;
+    margin-top: 25px;
     display: flex;
     :focus {
         outline: none;

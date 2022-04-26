@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ContactFormPageContainer = styled.div`
-
+    min-height: 100vh;
 `;
 
 export const HeadingContainer = styled.div`

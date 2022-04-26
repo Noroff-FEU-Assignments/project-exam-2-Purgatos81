@@ -52,6 +52,8 @@ export const Logo = styled.h2`
     color: white;
     font-size: x-large;
     font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    text-decoration: underline;
 `;
 
 export const NavLinkExtended = styled(Link)`

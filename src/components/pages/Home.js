@@ -1,5 +1,8 @@
-import { HeroBanner, 
-    HomeBody } from "../styles/HomeStyles";
+import { 
+    HeroBanner, 
+    HomeBody,
+    StyledHomeHeading,
+    StyledHomeSpan } from "../styles/HomeStyles";
 import SearchBar from "../utils/SearchBar";    
 import TargetHotel from "../hotels/HotelTarget";
 import HotelSearchList from "../hotels/HotelSearchList";
@@ -10,7 +13,7 @@ const Home = () => {
     return (
         <>
         <HomeBody>
-            <h1>Search for your Hotel</h1>
+            <StyledHomeHeading>Find your <StyledHomeSpan>Nordic Light Hotel</StyledHomeSpan></StyledHomeHeading>
             <SearchBar placeholder="Search Hotel..." />
         </HomeBody>
         

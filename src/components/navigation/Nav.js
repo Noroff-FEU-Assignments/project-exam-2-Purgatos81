@@ -33,7 +33,7 @@ const Nav = () => {
                     </NavLinkContainer>
                 </LeftContainer>
                 <RightContainer>
-                    <Logo>Test</Logo>
+                    <Logo>Nordic Light Hotels</Logo>
                 </RightContainer>
             </NavInnerContainer>
             {openNav && (
