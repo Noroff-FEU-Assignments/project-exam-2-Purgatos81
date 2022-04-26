@@ -1,8 +1,18 @@
 import HotelList from "../hotels/HotelsList";
+import { 
+    StyledHotelsMainContainer,
+    StyledHotelsContainer,
+    StyledHotelsHeading
+} from "../styles/HotelTargetStyles"
 
 const Hotels = () => {
     return (
-        <HotelList />
+        <StyledHotelsMainContainer>
+            <StyledHotelsHeading>Accomodations</StyledHotelsHeading>
+            <StyledHotelsContainer>
+                <HotelList />
+            </StyledHotelsContainer>
+        </StyledHotelsMainContainer>
     );
 };
 

@@ -41,8 +41,12 @@ function HotelList() {
         <>
             {hotels.map(function (hotel) {
                 console.log(hotel);
-                const { id, Name, Description } = hotel
-                return <TargetHotel key={hotel.id} id={hotel.id} Name={hotel.attributes.Name} Description={hotel.attributes.Description} />;
+                return <TargetHotel 
+                key={hotel.id} 
+                id={hotel.id} 
+                Name={hotel.attributes.Name} 
+                Description={hotel.attributes.Description} 
+                Price={hotel.attributes.Price} />;
             })}
         </>
     );
