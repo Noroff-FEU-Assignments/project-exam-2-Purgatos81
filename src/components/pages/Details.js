@@ -1,8 +1,13 @@
 import HotelDetails from "../hotels/HotelDetails";
+import {
+    DetailsBody
+} from "../styles/DetailsStyles";
 
 const Details = () => {
     return (
-        <HotelDetails />
+        <DetailsBody>
+            <HotelDetails />
+        </DetailsBody>
     );
 };
 

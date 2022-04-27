@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const StyledHotelsMainContainer = styled.div`
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -13,7 +13,7 @@ import {
 function TargetHotel({ id, Name, Description, Price }) {
     return (
             <StyledLinkContainer>
-                <StyledHotelLink to={`details/${id}`}>
+                <StyledHotelLink to={`/details/${id}`}>
                     <StyledHotelImage src="../images/Cabin.jpg" />       
                     <StyledListedHotelHeading>{Name}</StyledListedHotelHeading>
                     <StyledHotelDescriptionP>{Description}</StyledHotelDescriptionP>
