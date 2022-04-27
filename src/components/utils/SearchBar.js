@@ -6,15 +6,22 @@ import CloseIcon from '@mui/icons-material/Close';
 import HotelSearchList from "../hotels/HotelSearchList";
 import TargetSearchHotel from "../hotels/HotelSearchTarget";
 
-function SearchBar({ placeholder, hotels }) {
+function SearchBar({ placeholder }) {
+    const [result, setResult] = useState([])
+
+      fetch("https://eksamstrapi.herokuapp.com/api/hotels")
+        .then(response => response.jso())
+        .then(result => setResult(result))
+        .catch(error => console.log('error', error));
 
     const [ filteredHotels, setFilteredHotels ] = useState([]);
     const [ wordEntered, setWordEntered ] = useState("");
-
+    console.log(result);
     const handleFilter = (event) => {
+
         const searchWord = event.target.value;
         setWordEntered(searchWord);
-        const newFilter = hotels.filter((value) => {
+        const newFilter = result.filter((value) => {
             return value.Name.toLowerCase().includes(searchWord.toLowerCase());
         });
 

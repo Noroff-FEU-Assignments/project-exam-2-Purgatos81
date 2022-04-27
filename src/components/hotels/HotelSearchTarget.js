@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function TargetSearchHotel({ id, Name, }) {
     return (
-        <Link to={`details/${id}`}>
+        <Link to={`/details/${id}`}>
             <h4>{Name}</h4>
         </Link>
     );
