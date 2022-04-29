@@ -48,8 +48,10 @@ function SearchBar({ placeholder, data }) {
             <DataResults>
                 {filteredData.slice(0, 5).map((value, key) => {
                     return (
+                        <>
+                            <h2 key={value.id}>{value.attributes.Name} </h2>
+                        </>
                         
-                        <h2>{value} </h2>
                     );
                 })}
             </DataResults>
