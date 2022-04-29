@@ -2,7 +2,8 @@ import {
     HomeBody,
     StyledHomeHeading,
     StyledHomeSpan } from "../styles/HomeStyles";
-import SearchBar from "../utils/SearchBar";    
+import SearchBar from "../utils/SearchBar"; 
+ 
 
 
 const Home = () => {
@@ -12,7 +13,7 @@ const Home = () => {
         <>
         <HomeBody>
             <StyledHomeHeading>Find your <StyledHomeSpan>Nordic Light Hotel</StyledHomeSpan></StyledHomeHeading>
-            <SearchBar placeholder="Search Hotel..."  />
+            <SearchBar placeholder="Search Hotel..."  data={HotelData} />
         </HomeBody>
         
         </>

@@ -5,16 +5,28 @@ import CloseIcon from '@mui/icons-material/Close';
 import HotelSearchList from "./searchData";
 
 
-function SearchBar({ placeholder, hotels }) {
+function SearchBar({ placeholder, data }) {
     const [filteredData, setFilteredData ] = useState([]);
+    const [wordEntered, setWordEntered] = useState("");
 
     const handleFilter = (event) => {
         const searchWord = event.target.value
-        const newFilter = hotels.filter((value) => {
-            return value.Name.includes(searchWord);
+        setWordEntered(searchWord);
+        const newFilter = data.filter((value) => {
+            return value.Name.toLowerCase().includes(searchWord.toLowerCase());
         });
-        setFilteredData(newFilter);
-    }
+
+        if (searchWord === "") {
+            setFilteredData([]);
+          } else {
+            setFilteredData(newFilter);
+          }
+        };
+      
+        const clearInput = () => {
+          setFilteredData([]);
+          setWordEntered("");
+        };
 
     return (
         <SearchBarContainer>
@@ -22,13 +34,24 @@ function SearchBar({ placeholder, hotels }) {
                 <SearchTextBox 
                      type="text"
                      placeholder={placeholder}
+                     value={wordEntered}
                      onChange={handleFilter}
                 />
-                <StyledSearchIcon><SearchIcon /></StyledSearchIcon>
+                <StyledSearchIcon>
+                    {filteredData.length === 0 ? (
+                        <SearchIcon />
+                    ) : (
+                        <CloseIcon />
+                    )}
+                </StyledSearchIcon>
             </SearchInputs>
             { filteredData.length != 0 && (
             <DataResults>
-                <HotelSearchList />
+                {filteredData.slice(0, 5).map((value, key) => {
+                    return (
+                        <h2>{value.Name} </h2>
+                    );
+                })}
             </DataResults>
             )}
         </SearchBarContainer>
