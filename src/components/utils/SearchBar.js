@@ -7,27 +7,32 @@ import HotelSearchList from "./searchData";
 import TargetSearchHotel from "../hotels/HotelSearchTarget";
 
 
-function SearchBar({ placeholder, data }) {
-    async function getData() {
-        const response = await fetch("http://localhost:1337/api/hotels");
-                 const hotels = await response.json();
-                 console.log(hotels.data)
-                 const getHotels = hotels;
-                 return getHotels;
-             }
-        getData();
+function SearchBar({ placeholder, hotels }) {
+    const [filteredData, setFilteredData ] = useState([]);
+
+    const handleFilter = (event) => {
+        const searchWord = event.target.value
+        const newFilter = hotels.filter((value) => {
+            return value.Name.includes(searchWord);
+        });
+        setFilteredData(newFilter);
+    }
+
     return (
         <SearchBarContainer>
             <SearchInputs>
                 <SearchTextBox 
                      type="text"
                      placeholder={placeholder}
+                     onChange={handleFilter}
                 />
                 <StyledSearchIcon><SearchIcon /></StyledSearchIcon>
             </SearchInputs>
+            { filteredData.length != 0 && (
             <DataResults>
                 <HotelSearchList />
             </DataResults>
+            )}
         </SearchBarContainer>
     )
 }

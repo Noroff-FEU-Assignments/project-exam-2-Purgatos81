@@ -13,10 +13,6 @@ flex-direction: column;
 align-items: center;
 `;
 
-export const HeroBanner = styled.img`
-width:  100%;
-`;
-
 export const StyledHomeHeading = styled.h1`
     color: white;
     margin-top: 250px;

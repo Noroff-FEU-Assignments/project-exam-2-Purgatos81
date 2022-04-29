@@ -7,6 +7,7 @@ function HotelSearchList() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
+
     useEffect(function() {
         async function fetchData() {
             try {
