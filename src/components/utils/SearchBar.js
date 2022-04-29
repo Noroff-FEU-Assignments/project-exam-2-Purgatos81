@@ -41,7 +41,7 @@ function SearchBar({ placeholder, data }) {
                     {filteredData.length === 0 ? (
                         <SearchIcon />
                     ) : (
-                        <CloseIcon />
+                        <CloseIcon onClick={clearInput} />
                     )}
                 </StyledSearchIcon>
             </SearchInputs>
