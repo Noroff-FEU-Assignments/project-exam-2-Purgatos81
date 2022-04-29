@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { SearchBarContainer, SearchInputs, SearchTextBox, DataResults, StyledSearchIcon } from "../styles/SearchStyles";
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
+import { Link } from "react-router-dom";
 
 
 function SearchBar({ placeholder, data }) {
@@ -46,10 +47,12 @@ function SearchBar({ placeholder, data }) {
             </SearchInputs>
             { filteredData.length != 0 && (
             <DataResults>
-                {filteredData.slice(0, 5).map((value, key) => {
+                {filteredData.slice(0, 5).map((value) => {
                     return (
                         <>
-                            <h2 key={value.id}>{value.attributes.Name} </h2>
+                            <Link  key={value.id} to={`/details/${value.id}`}>
+                                <h2>{value.attributes.Name} </h2>
+                            </Link>
                         </>
                         
                     );
