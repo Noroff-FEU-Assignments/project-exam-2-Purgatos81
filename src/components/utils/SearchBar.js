@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { SearchBarContainer, SearchInputs, SearchTextBox, DataResults, StyledSearchIcon } from "../styles/SearchStyles";
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
-import HotelSearchList from "./searchData";
 
 
 function SearchBar({ placeholder, data }) {
@@ -13,7 +12,7 @@ function SearchBar({ placeholder, data }) {
         const searchWord = event.target.value
         setWordEntered(searchWord);
         const newFilter = data.filter((value) => {
-            return value.Name.toLowerCase().includes(searchWord.toLowerCase());
+            return value.attributes.Name.toLowerCase().includes(searchWord.toLowerCase());
         });
 
         if (searchWord === "") {
@@ -49,7 +48,8 @@ function SearchBar({ placeholder, data }) {
             <DataResults>
                 {filteredData.slice(0, 5).map((value, key) => {
                     return (
-                        <h2>{value.Name} </h2>
+                        
+                        <h2>{value} </h2>
                     );
                 })}
             </DataResults>
