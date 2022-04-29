@@ -54,7 +54,3 @@ function HotelList() {
 
 export default HotelList;
 
-/*                return <div key={hotel.id}>
-<h2>{hotel.attributes.Name}</h2>
-<p>{hotel.attributes.Description}</p>
-</div>; */

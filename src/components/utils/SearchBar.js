@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
-import { HotelsAPI } from "../utils/Api";
 import { SearchBarContainer, SearchInputs, SearchTextBox, DataResults, StyledSearchIcon } from "../styles/SearchStyles";
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 import HotelSearchList from "./searchData";
-import TargetSearchHotel from "../hotels/HotelSearchTarget";
 
 
 function SearchBar({ placeholder, hotels }) {
