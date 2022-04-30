@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import TargetHotel from "./HotelTarget";
 import { HotelsAPI } from "../utils/Api";
 
-function HotelList() {
+function FeaturedHotelList() {
     const [hotels, setHotels] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -40,16 +40,17 @@ function HotelList() {
         <>
             {hotels.map(function (hotel) {
                 console.log(hotel.attributes.Featured);
+                if(hotel.attributes.Featured) {
                 return <TargetHotel 
                 key={hotel.id} 
                 id={hotel.id} 
                 Name={hotel.attributes.Name} 
                 Description={hotel.attributes.Description} 
                 Price={hotel.attributes.Price} />;
+                }
             })}
         </>
     );
 }
 
-export default HotelList;
-
+export default FeaturedHotelList;
