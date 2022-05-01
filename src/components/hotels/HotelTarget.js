@@ -10,11 +10,11 @@ import {
     StyledHotelPriceSpan
 } from "../styles/HotelTargetStyles";
 
-function TargetHotel({ id, Name, Description, Price }) {
+function TargetHotel({ id, imgurl, Name, Description, Price }) {
     return (
             <StyledLinkContainer>
                 <StyledHotelLink to={`/details/${id}`}>
-                    <StyledHotelImage src="../images/Cabin.jpg" />       
+                    <StyledHotelImage src="http://localhost:1337/uploads/Iglo_a447dcb8c6.jpg" />       
                     <StyledListedHotelHeading>{Name}</StyledListedHotelHeading>
                     <StyledHotelDescriptionP>{Description}</StyledHotelDescriptionP>
                     <StyledHotelPriceP>{Price}<StyledHotelPriceSpan> NOK</StyledHotelPriceSpan></StyledHotelPriceP>

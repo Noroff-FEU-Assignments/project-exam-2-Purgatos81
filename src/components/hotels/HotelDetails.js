@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { HotelsAPI } from "../utils/Api";
+import { DetailsAPI } from "../utils/Api";
 
 function HotelDetails() {
     const [hotel, setHotel] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-	// let history = useHistory();
+	// let history = useHistory();Use Navigate?
 
 	const { id } = useParams();
 

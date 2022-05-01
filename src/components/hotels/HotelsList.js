@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import TargetHotel from "./HotelTarget";
 import { HotelsAPI } from "../utils/Api";
+import { ImgURL } from "../utils/Api";
 
 function HotelList() {
     const [hotels, setHotels] = useState([]);
@@ -39,10 +40,11 @@ function HotelList() {
     return (
         <>
             {hotels.map(function (hotel) {
-                console.log(hotel.attributes.Featured);
+                console.log(hotel.attributes.imgurl);
                 return <TargetHotel 
                 key={hotel.id} 
                 id={hotel.id} 
+                imgurl={hotel.imgurl}
                 Name={hotel.attributes.Name} 
                 Description={hotel.attributes.Description} 
                 Price={hotel.attributes.Price} />;
