@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 export const HomeBody = styled.div`
 background-image: url(images/Banner_Large2.jpg);
-min-height: 100vh;
+min-height: 80vh;
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
