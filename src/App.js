@@ -23,7 +23,6 @@ function App() {
             <Route path='contact' element={<Contact />} />
             <Route path='hotels' element={<Hotels />} />
             <Route path='details/:id' element={<Details />} />
-
             <Route path='admin' element={<Admin />} />
             <Route path='login' element={<Login />} />
           </Routes>
