@@ -14,14 +14,17 @@ import {
     StyledContactLabel,
     StyledAsterix } from "../styles/ContactStyles";
 
-function ContactForm() {
+const ContactForm = ({sendContact}) => {
     const {register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(ContactSchema),
     });
 
-    function onSubmit(data) {
-        console.log(data);
-    }
+    const onSubmit = (formData) => {
+        console.log('Form Data: ', formData);
+
+        sendContact(formData).catch(console.error);
+        alert('Your message has been sent!');
+    };
 
     console.log(errors);
 
@@ -33,16 +36,16 @@ function ContactForm() {
 
             <StyledContactForm onSubmit={handleSubmit(onSubmit)}>
                 <StyledContactLabel HTMLFor="contactName">Name<StyledAsterix> *</StyledAsterix></StyledContactLabel>
-                <StyledInput id="contactName" {...register("name")} placeholder='Your name...'/>
-                {errors.name && <span>{errors.name.message}</span>}
+                <StyledInput id="contactName" {...register("Name")} placeholder='Your name...'/>
+                {errors.Name && <span>{errors.Name.message}</span>}
 
                 <StyledContactLabel HTMLFor="contactEmail">Email<StyledAsterix> *</StyledAsterix></StyledContactLabel>
-                <StyledInput id="contactEmail" {...register("email")} placeholder='Your email...'/>
-                {errors.email && <span>{errors.email.message}</span>}
+                <StyledInput id="contactEmail" {...register("Email")} placeholder='Your email...'/>
+                {errors.Email && <span>{errors.Email.message}</span>}
 
                 <StyledContactLabel HTMLFor="contactMessage">Message<StyledAsterix> *</StyledAsterix></StyledContactLabel>
-                <StyledTextarea id="contactMessage"{...register("message")} placeholder='Your message...'/>
-                {errors.message && <span>{errors.message.message}</span>}
+                <StyledTextarea id="contactMessage"{...register("Message")} placeholder='Your message...'/>
+                {errors.Message && <span>{errors.Message.message}</span>}
 
                 <StyledContactButton>Send</StyledContactButton>
             </StyledContactForm>

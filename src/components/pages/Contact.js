@@ -1,8 +1,23 @@
 import ContactForm from "../forms/ContactForm";
+import axios from "axios";
+import { ContactAPI } from "../utils/Api";
 
 const Contact = () => {
+    const sendContact = async (formData) => {
+        const options = { 
+            data: {
+                Name: formData.Name,
+                Email: formData.Email,
+                Message: formData.Message,
+            },
+        };
+        const responseData = await axios.post(ContactAPI, options);
+        console.log(responseData);
+    };
+
+
     return (
-        <ContactForm />
+        <ContactForm sendContact={sendContact} />
     );
 };
 
