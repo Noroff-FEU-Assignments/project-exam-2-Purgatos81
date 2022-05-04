@@ -1,7 +1,7 @@
-import HotelDetails from "../hotels/HotelDetails";
+import HotelDetails from "../components/hotels/HotelDetails";
 import {
     DetailsBody
-} from "../styles/DetailsStyles";
+} from "../components/styles/DetailsStyles";
 
 const Details = () => {
     return (

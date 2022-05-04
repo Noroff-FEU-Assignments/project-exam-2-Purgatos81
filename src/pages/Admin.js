@@ -1,10 +1,10 @@
-import AuthContext from "../context/AuthContext";
+import AuthContext from "../components/context/AuthContext";
 import { useContext } from "react";
-import LoginForm from "../forms/LoginForm";
-import AddHotelForm from "../forms/AddHotelForm";
+import LoginForm from "../components/forms/LoginForm";
+import AddHotelForm from "../components/forms/AddHotelForm";
 import axios from "axios";
-import { HotelsAPI } from "../utils/Api";
-import ContactList from "../contact/ContactList";
+import { HotelsAPI } from "../components/utils/Api";
+import ContactList from "../components/contact/ContactList";
 
 
 const Admin = () => {

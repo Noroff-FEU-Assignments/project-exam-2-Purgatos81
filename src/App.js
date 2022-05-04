@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/pages/Home';
-import Contact from './components/pages/Contact';
-import Hotels from './components/pages/Hotels';
-import Details from './components/pages/Details';
-import Admin from './components/pages/Admin';
-import Login from './components/pages/Login';
+import Home from './pages/Home';
+import Contact from './pages/Contact';
+import Hotels from './pages/Hotels';
+import Details from './pages/Details';
+import Admin from './pages/Admin';
+import Login from './pages/Login';
 import Nav from './components/navigation/Nav';
 import Footer from './components/layouts/Footer';
 import { AuthProvider } from './components/context/AuthContext';

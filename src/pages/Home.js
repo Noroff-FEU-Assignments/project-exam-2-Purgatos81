@@ -1,17 +1,17 @@
 import { 
     HomeBody,
     StyledHomeHeading,
-    StyledHomeSpan } from "../styles/HomeStyles";
-import SearchBar from "../utils/SearchBar"; 
-import { HotelsAPI } from "../utils/Api";
+    StyledHomeSpan } from "../components/styles/HomeStyles";
+import SearchBar from "../components/utils/SearchBar"; 
+import { HotelsAPI } from "../components/utils/Api";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import FeaturedHotelList from "../hotels/FeaturedHotelsList";
+import FeaturedHotelList from "../components/hotels/FeaturedHotelsList";
 import { 
     StyledHotelsMainContainer,
     StyledHotelsContainer,
     StyledHotelsHeading
-} from "../styles/HotelTargetStyles"
+} from "../components/styles/HotelTargetStyles"
  
 
 

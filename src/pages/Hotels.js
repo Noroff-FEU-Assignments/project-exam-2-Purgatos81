@@ -1,9 +1,9 @@
-import HotelList from "../hotels/HotelsList";
+import HotelList from "../components/hotels/HotelsList";
 import { 
     StyledHotelsMainContainer,
     StyledHotelsContainer,
     StyledHotelsHeading
-} from "../styles/HotelTargetStyles"
+} from "../components/styles/HotelTargetStyles"
 
 const Hotels = () => {
     return (

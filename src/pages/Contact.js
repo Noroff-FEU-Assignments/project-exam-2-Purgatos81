@@ -1,6 +1,6 @@
-import ContactForm from "../forms/ContactForm";
+import ContactForm from "../components/forms/ContactForm";
 import axios from "axios";
-import { ContactAPI } from "../utils/Api";
+import { ContactAPI } from "../components/utils/Api";
 
 const Contact = () => {
     const sendContact = async (formData) => {
