@@ -1,3 +1,4 @@
+import { Today } from '@mui/icons-material';
 import * as yup from 'yup';
 
 export const userLoginSchema = yup.object().shape({
@@ -17,4 +18,10 @@ export const AddHotelSchema = yup.object().shape({
   Price: yup.number().required("Please enter price"),
   Information: yup.string().required("Please enter information"),
   imgurl: yup.string().required("Please enter image URL"),
+});
+
+export const BookingSchema = yup.object().shape({
+  Name: yup.string().required("Please enter your name"),
+  Email: yup.string().required("Please enter an email address").email("Please enter a valid email address"),
+  Date: yup.date().required("Please enter date"),
 });
