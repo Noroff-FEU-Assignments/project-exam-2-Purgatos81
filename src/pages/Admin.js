@@ -5,6 +5,7 @@ import AddHotelForm from "../components/forms/AddHotelForm";
 import axios from "axios";
 import { HotelsAPI } from "../components/utils/Api";
 import ContactList from "../components/contact/ContactList";
+import BookingList from "../components/bookings/BookingList";
 
 
 const Admin = () => {
@@ -36,6 +37,7 @@ const Admin = () => {
         <>
             <AddHotelForm sendNewHotel={sendNewHotel} />
             <ContactList />
+            <BookingList />
         </>
     );
     }
