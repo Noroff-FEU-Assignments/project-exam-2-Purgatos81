@@ -1,12 +1,15 @@
 import PropTypes from "prop-types";
+import {
+    StyledTargetContactContainer
+} from "../styles/AdminStyles";
 
 function TargetContact({ Name, Email, Message }) {
     return (
-    <div>
+    <StyledTargetContactContainer>
         <h4>{Name}</h4>
         <p>{Email}</p>
         <p>{Message}</p>
-    </div>
+    </StyledTargetContactContainer>
     );
 }
 

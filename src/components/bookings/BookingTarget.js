@@ -1,12 +1,15 @@
 import PropTypes from "prop-types";
+import {
+    StyledTargetBookingContainer
+} from "../styles/AdminStyles";
 
 function TargetBooking({ Name, Email, Date }) {
     return (
-        <div>
-            <h4>{Name}</h4>
-            <p>{Email}</p>
-            <p>{Date}</p>
-        </div>
+        <StyledTargetBookingContainer>
+            <h4>Name: {Name}</h4>
+            <p>Email: {Email}</p>
+            <p>Date: {Date}</p>
+        </StyledTargetBookingContainer>
         );
 }
 

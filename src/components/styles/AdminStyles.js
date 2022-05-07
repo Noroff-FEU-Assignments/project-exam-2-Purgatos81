@@ -1,5 +1,45 @@
 import styled from "@emotion/styled";
 
+export const StyledBookingAndMessagesContainer = styled.div`
+    min-height: 80vh;
+    display: flex;
+`;
+
+export const StyledBookingAndMessagesHeadingContainer = styled.div`
+    background-color: #58D1AE80;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+`;
+
+export const StyledBookingContainer = styled.div`
+    min-width: 50%;
+`;
+
+export const StyledMessagesContainer = styled.div`
+    min-width: 50%;
+`;
+
+export const StyledBookingAndMessagesHeading = styled.h2`
+    color: #082E2F;
+    margin: 0;
+    padding: 50px 0;
+    font-size: 2.5em;
+    font-weight: 600;
+`;
+
+export const StyledTargetBookingContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+export const StyledTargetContactContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
 export const AddHotelFormContainer = styled.div`
     min-height: 100vh;
 `;
