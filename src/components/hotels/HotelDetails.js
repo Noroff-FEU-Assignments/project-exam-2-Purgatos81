@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { HotelsAPI } from "../utils/Api";
+import { HotelsAPI, ImgURL } from "../utils/Api";
 import { DetailsAPI } from "../utils/Api";
 
 function HotelDetails() {
@@ -55,6 +55,7 @@ function HotelDetails() {
 		<div>
 			<h1>{hotel.attributes.Name}</h1>
 			<p>{hotel.attributes.Description}</p>
+			<img src={hotel.attributes.imgurl} />
 		</div>
 	);
 }

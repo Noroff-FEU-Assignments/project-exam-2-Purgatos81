@@ -14,7 +14,7 @@ function TargetHotel({ id, imgurl, Name, Description, Price }) {
     return (
             <StyledLinkContainer>
                 <StyledHotelLink to={`/details/${id}`}>
-                    <StyledHotelImage src="http://localhost:1337/uploads/Iglo_a447dcb8c6.jpg" />       
+                    <StyledHotelImage src={imgurl} />       
                     <StyledListedHotelHeading>{Name}</StyledListedHotelHeading>
                     <StyledHotelDescriptionP>{Description}</StyledHotelDescriptionP>
                     <StyledHotelPriceP>{Price}<StyledHotelPriceSpan> NOK</StyledHotelPriceSpan></StyledHotelPriceP>
@@ -25,6 +25,7 @@ function TargetHotel({ id, imgurl, Name, Description, Price }) {
 
 TargetHotel.propTypes = {
     id: PropTypes.number.isRequired,
+    imgurl: PropTypes.string.isRequired,
     Name: PropTypes.string.isRequired,
     Description: PropTypes.string.isRequired,
     Price: PropTypes.string.isRequired,

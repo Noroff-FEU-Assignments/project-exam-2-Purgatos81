@@ -44,9 +44,8 @@ function HotelList() {
                 return <TargetHotel 
                 key={hotel.id} 
                 id={hotel.id} 
-                imgurl={hotel.imgurl}
+                imgurl={hotel.attributes.imgurl}
                 Name={hotel.attributes.Name} 
-                Description={hotel.attributes.Description} 
                 Price={hotel.attributes.Price} />;
             })}
         </>

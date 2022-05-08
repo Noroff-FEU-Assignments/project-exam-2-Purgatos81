@@ -43,9 +43,9 @@ function FeaturedHotelList() {
                 if(hotel.attributes.Featured) {
                 return <TargetHotel 
                 key={hotel.id} 
-                id={hotel.id} 
+                id={hotel.id}
+                imgurl={hotel.attributes.imgurl}
                 Name={hotel.attributes.Name} 
-                Description={hotel.attributes.Description} 
                 Price={hotel.attributes.Price} />;
                 }
             })}

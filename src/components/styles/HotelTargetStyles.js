@@ -17,12 +17,12 @@ export const StyledHotelsHeading = styled.h1`
 export const StyledHotelsContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px 10% 20px 10%;
+    justify-content: space-around;
+    padding: 20px 5% 20px 5%;
 `;
 
 export const StyledLinkContainer = styled.div`
-    max-width: 37%;
+    max-width: 500px;
     min-width: 200px;
     margin: 30px;
     background-color: white;
@@ -41,7 +41,7 @@ export const StyledHotelLink = styled(Link)`
 `;
 
 export const StyledHotelImage = styled.img`
-    max-width: 100%;
+    max-width: 500px;
     border-radius: 5px 5px 0 0;
 `;
 
