@@ -2,6 +2,13 @@ import { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { HotelsAPI, ImgURL } from "../utils/Api";
 import { DetailsAPI } from "../utils/Api";
+import {
+	StyledDetailsInfoContainer,
+	DetailsImgStyles,
+	StyledTextContainer,
+	StyledDetailsPriceP,
+	StyledDetailPriceSpan
+} from "../styles/DetailsStyles";
 
 function HotelDetails() {
     const [hotel, setHotel] = useState(null);
@@ -52,11 +59,16 @@ function HotelDetails() {
 	}
 
 	return (
-		<div>
-			<h1>{hotel.attributes.Name}</h1>
-			<p>{hotel.attributes.Description}</p>
-			<img src={hotel.attributes.imgurl} />
-		</div>
+		<>
+			<StyledDetailsInfoContainer>
+				<DetailsImgStyles src={hotel.attributes.imgurl} />
+				<StyledTextContainer>
+					<h1>{hotel.attributes.Name}</h1>
+					<p>{hotel.attributes.Description}</p>
+				</StyledTextContainer>
+			</StyledDetailsInfoContainer>
+			<StyledDetailsPriceP>{hotel.attributes.Price}<StyledDetailPriceSpan> NOK</StyledDetailPriceSpan></StyledDetailsPriceP>
+		</>
 	);
 }
 
