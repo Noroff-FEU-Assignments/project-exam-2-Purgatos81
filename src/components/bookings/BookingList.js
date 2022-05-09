@@ -43,7 +43,8 @@ function BookingList() {
                 return <TargetBooking
                 Name={booking.attributes.Name}
                 Email={booking.attributes.Email}
-                Date={booking.attributes.Date} />;
+                From={booking.attributes.From}
+                To={booking.attributes.To} />;
             })}
         </>
     );

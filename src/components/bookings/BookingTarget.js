@@ -3,12 +3,13 @@ import {
     StyledTargetBookingContainer
 } from "../styles/AdminStyles";
 
-function TargetBooking({ Name, Email, Date }) {
+function TargetBooking({ Name, Email, From, To }) {
     return (
         <StyledTargetBookingContainer>
             <h4>Name: {Name}</h4>
             <p>Email: {Email}</p>
-            <p>Date: {Date}</p>
+            <p>From: {From}</p>
+            <p>To: {To}</p>
         </StyledTargetBookingContainer>
         );
 }
@@ -16,7 +17,8 @@ function TargetBooking({ Name, Email, Date }) {
 TargetBooking.propTypes = {
     Name: PropTypes.string.isRequired,
     Email: PropTypes.string.isRequired,
-    Date: PropTypes.number.isRequired,
+    From: PropTypes.number.isRequired,
+    To: PropTypes.number.isRequired,
 };
 
 export default TargetBooking;

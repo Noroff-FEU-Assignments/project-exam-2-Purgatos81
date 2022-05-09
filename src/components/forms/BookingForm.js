@@ -42,9 +42,13 @@ const BookingForm = ({sendBooking}) => {
                 <StyledBookingInput id="bookingEmail" {...register("Email")} placeholder='Your email...'/>
                 {errors.Email && <span>{errors.Email.message}</span>}
 
-                <StyledBookingLabel HTMLFor="bookingDate">Date<StyledBookingAsterix> *</StyledBookingAsterix></StyledBookingLabel>
-                <StyledBookingInput id="bookingDate" {...register("Date")} placeholder='DD.MM.YYYY'/>
-                {errors.Date && <span>{errors.Date.message}</span>}
+                <StyledBookingLabel HTMLFor="bookingFrom">From<StyledBookingAsterix> *</StyledBookingAsterix></StyledBookingLabel>
+                <StyledBookingInput id="bookingFrom" {...register("From")} placeholder='DD.MM.YYYY'/>
+                {errors.From && <span>{errors.From.message}</span>}
+
+                <StyledBookingLabel HTMLFor="bookingTo">To<StyledBookingAsterix> *</StyledBookingAsterix></StyledBookingLabel>
+                <StyledBookingInput id="bookingTo" {...register("To")} placeholder='DD.MM.YYYY'/>
+                {errors.To && <span>{errors.To.message}</span>}
 
                 <StyledBookingButton>Send</StyledBookingButton>
             </StyledBookingForm>

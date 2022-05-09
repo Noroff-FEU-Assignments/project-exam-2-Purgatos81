@@ -2,7 +2,14 @@ import styled from "@emotion/styled";
 
 export const StyledBookingAndMessagesContainer = styled.div`
     min-height: 80vh;
-    display: flex;
+    @media (min-width: 701px) {
+        display: flex;
+        flex-direction: row;
+    }
+        @media (max-width: 700px) {
+        display: flex;
+        flex-direction: column;
+    }
 `;
 
 export const StyledBookingAndMessagesHeadingContainer = styled.div`
@@ -32,12 +39,14 @@ export const StyledTargetBookingContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: black solid 1px;
 `;
 
 export const StyledTargetContactContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: black solid 1px;
 `;
 
 export const AddHotelFormContainer = styled.div`

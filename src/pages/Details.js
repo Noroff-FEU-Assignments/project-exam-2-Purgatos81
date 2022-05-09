@@ -13,7 +13,8 @@ const Details = () => {
             data: {
                 Name: formData.Name,
                 Email: formData.Email,
-                Date: formData.Date,
+                From: formData.From,
+                To: formData.To,
             },
         };
         const responseData = await axios.post(BookingAPI, options);
