@@ -17,17 +17,28 @@ export const NavInnerContainer = styled.div`
 
 
 export const LeftContainer = styled.div`
-    flex: 70%;
+
     display: flex;
     align-items: center;
     padding-left: 5%;
+    @media (max-width: 700px) {
+        flex: 50%;
+    }
+    @media (min-width: 701px) {
+        flex: 70%;
+    }
 `;
 
 export const RightContainer = styled.div`
-    flex: 30%;
     display: flex;
     align-items: flex-end;
     padding-right: 50px;
+    @media (max-width: 700px) {
+        flex: 50%;
+    }
+    @media (min-width: 701px) {
+        flex: 30%;
+    }
 `;
 
 export const NavLinkContainer = styled.div`
