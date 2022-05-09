@@ -11,6 +11,7 @@ const Details = () => {
     const sendBooking = async (formData) => {
         const options = {
             data: {
+                Hotelname: formData.Hotelname,
                 Name: formData.Name,
                 Email: formData.Email,
                 From: formData.From,

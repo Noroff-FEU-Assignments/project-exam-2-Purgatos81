@@ -12,6 +12,7 @@ import {
     StyledBookingTextarea,
     StyledBookingButton
 } from "../styles/BookingStyles";
+import { Hotel } from "@mui/icons-material";
 
 const BookingForm = ({sendBooking}) => {
     const {register, handleSubmit, formState: { errors } } = useForm({
@@ -34,6 +35,9 @@ const BookingForm = ({sendBooking}) => {
             </BookingHeadingContainer>
 
             <StyledBookingForm onSubmit={handleSubmit(onSubmit)}>
+
+                <input {...register("Hotelname")} value="Test name" type="hidden"/>
+
                 <StyledBookingLabel HTMLFor="bookingName">Your name<StyledBookingAsterix> *</StyledBookingAsterix></StyledBookingLabel>
                 <StyledBookingInput id="bookingName" {...register("Name")} placeholder='Your name...'/>
                 {errors.Name && <span>{errors.Name.message}</span>}
