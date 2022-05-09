@@ -6,8 +6,12 @@ import {
 	StyledDetailsInfoContainer,
 	DetailsImgStyles,
 	StyledTextContainer,
-	StyledDetailsPriceP,
-	StyledDetailPriceSpan
+	StyledPriceAndRatingContainer,
+	StyledPriceContainer,
+	StyledPriceH2,
+	StyledDetailPriceSpan,
+	StyledRatingContainer,
+	StyledRatingSpan
 } from "../styles/DetailsStyles";
 
 function HotelDetails() {
@@ -67,7 +71,14 @@ function HotelDetails() {
 					<p>{hotel.attributes.Description}</p>
 				</StyledTextContainer>
 			</StyledDetailsInfoContainer>
-			<StyledDetailsPriceP>{hotel.attributes.Price}<StyledDetailPriceSpan> NOK</StyledDetailPriceSpan></StyledDetailsPriceP>
+			<StyledPriceAndRatingContainer>
+				<StyledPriceContainer>
+					<StyledPriceH2>{hotel.attributes.Price}<StyledDetailPriceSpan> NOK</StyledDetailPriceSpan></StyledPriceH2>
+				</StyledPriceContainer>
+				<StyledRatingContainer>
+					<h3>Rating: <StyledRatingSpan>{hotel.attributes.Rating}</StyledRatingSpan></h3>
+				</StyledRatingContainer>
+			</StyledPriceAndRatingContainer>
 		</>
 	);
 }
