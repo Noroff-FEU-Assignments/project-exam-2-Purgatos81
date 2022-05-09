@@ -1,5 +1,12 @@
 import { useState, useEffect } from "react";
-import { SearchBarContainer, SearchInputs, SearchTextBox, DataResults, StyledSearchIcon } from "../styles/SearchStyles";
+import { SearchBarContainer, 
+    SearchInputs, 
+    SearchTextBox, 
+    DataResults, 
+    StyledSearchIcon,
+    StyledSearchHotelLink,
+    StyledSearchH2
+ } from "../styles/SearchStyles";
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 import { Link } from "react-router-dom";
@@ -50,9 +57,9 @@ function SearchBar({ placeholder, data }) {
                 {filteredData.slice(0, 5).map((value) => {
                     return (
                         <>
-                            <Link  key={value.id} to={`/details/${value.id}`}>
-                                <h2>{value.attributes.Name} </h2>
-                            </Link>
+                            <StyledSearchHotelLink  key={value.id} to={`/details/${value.id}`}>
+                                <StyledSearchH2>{value.attributes.Name} </StyledSearchH2>
+                            </StyledSearchHotelLink>
                         </>
                         
                     );

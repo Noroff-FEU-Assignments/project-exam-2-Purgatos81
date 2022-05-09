@@ -25,16 +25,6 @@ export const SearchTextBox = styled.input`
     width: 300px;
 `;
 
-
-//Does not work*/
-// export const SearchIcon = styled.icon`
-//     height: 60px;
-//     width: 50px;
-//     background-color: white;
-//     display: grid;
-//     place-items: center;
-// `;
-
 export const DataResults = styled.div`
   margin-top: 5px;
   width: 300px;
@@ -52,4 +42,13 @@ export const StyledSearchIcon = styled.div`
   background-color: white;
   display: grid;
   place-items: center;
+`;
+
+export const StyledSearchHotelLink = styled(Link)`
+    text-decoration: none;
+`;
+
+export const StyledSearchH2 = styled.h2`
+  color: black;
+  padding-left: 15px;
 `;
