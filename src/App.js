@@ -12,22 +12,23 @@ import GlobalStyle from './components/styles/GlobalStyles';
 
 
 function App() {
+
   return (
     <>
       <AuthProvider>
         <GlobalStyle />
-        <Router>
-          <Nav />
-          <Routes>
-            <Route index element={<Home />} />
-            <Route path='contact' element={<Contact />} />
-            <Route path='hotels' element={<Hotels />} />
-            <Route path='details/:id' element={<Details />} />
-            <Route path='admin' element={<Admin />} />
-            <Route path='login' element={<Login />} />
-          </Routes>
-          <Footer />
-        </Router>
+          <Router>
+            <Nav />
+              <Routes>
+                <Route index element={<Home />} />
+                <Route path='contact' element={<Contact />} />
+                <Route path='hotels' element={<Hotels />} />
+                <Route path='details/:id' element={<Details />} />
+                <Route path='admin' element={<Admin />} />
+                <Route path='login' element={<Login />} />
+              </Routes>
+            <Footer />
+          </Router>
       </AuthProvider>
     </>
   );

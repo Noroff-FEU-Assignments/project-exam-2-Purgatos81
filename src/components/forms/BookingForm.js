@@ -1,3 +1,4 @@
+import { useState, useEffect, useContext } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { BookingSchema } from "../utils/yupSchemas";
@@ -13,8 +14,10 @@ import {
     StyledBookingButton
 } from "../styles/BookingStyles";
 import { Hotel } from "@mui/icons-material";
+import { GetHotelNameContext } from "../context/HotelnameContext";
 
 const BookingForm = ({sendBooking}) => {
+    const {bookedHotelName, setBookedHotelName} = useContext(GetHotelNameContext);
     const {register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(BookingSchema),
     });
@@ -36,7 +39,7 @@ const BookingForm = ({sendBooking}) => {
 
             <StyledBookingForm onSubmit={handleSubmit(onSubmit)}>
 
-                <input {...register("Hotelname")} value="Test name" type="hidden"/>
+                <input {...register("Hotelname")} value={bookedHotelName}/>
 
                 <StyledBookingLabel HTMLFor="bookingName">Your name<StyledBookingAsterix> *</StyledBookingAsterix></StyledBookingLabel>
                 <StyledBookingInput id="bookingName" {...register("Name")} placeholder='Your name...'/>

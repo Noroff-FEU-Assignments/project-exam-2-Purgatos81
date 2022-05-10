@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, createContext, useContext } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import { HotelsAPI, ImgURL } from "../utils/Api";
 import { DetailsAPI } from "../utils/Api";
+import { GetHotelNameContext } from "../context/HotelnameContext";
 import {
 	StyledDetailsInfoContainer,
 	DetailsImgStyles,
@@ -19,13 +20,9 @@ function HotelDetails() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-	// let history = useHistory();Use Navigate?
+	const {bookedHotelName, setBookedHotelName} = useContext(GetHotelNameContext);
 
 	const { id } = useParams();
-
-	// if (!id) {
-	// 	history.push("/");
-	// }
 
 	const url = HotelsAPI + "/" + id;
 
@@ -40,6 +37,9 @@ function HotelDetails() {
 						const json = await response.json();
 						console.log(json.data);
 						setHotel(json.data);
+						setBookedHotelName(json.data.attributes.Name);
+						console.log(bookedHotelName);
+						
 					} else {
 						setError("An error occured");
 					}
@@ -47,13 +47,12 @@ function HotelDetails() {
 					setError(error.toString());
 				} finally {
 					setLoading(false);
-				}
-			}
+				} 
+			} 
 			fetchData();
 		},
 		[url]
-	);
-
+	); 
 	if (loading) {
 		return <div>Loading...</div>;
 	}
@@ -61,8 +60,9 @@ function HotelDetails() {
 	if (error) {
 		return <div>An error occured: {error}</div>;
 	}
-
+	
 	return (
+		
 		<>
 			<StyledDetailsInfoContainer>
 				<DetailsImgStyles src={hotel.attributes.imgurl} />
