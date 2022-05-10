@@ -27,6 +27,7 @@ const BookingForm = ({sendBooking}) => {
 
         sendBooking(formData).catch(console.error);
         alert('Your booking has been sent!');
+        
     };
 
     console.log(errors);
@@ -37,8 +38,8 @@ const BookingForm = ({sendBooking}) => {
                 <BookingHeading>Book it now!</BookingHeading>
             </BookingHeadingContainer>
 
-            <StyledBookingForm onSubmit={handleSubmit(onSubmit)}>
-
+            <StyledBookingForm>
+            
                 <input {...register("Hotelname")} value={bookedHotelName}/>
 
                 <StyledBookingLabel HTMLFor="bookingName">Your name<StyledBookingAsterix> *</StyledBookingAsterix></StyledBookingLabel>
@@ -57,7 +58,7 @@ const BookingForm = ({sendBooking}) => {
                 <StyledBookingInput id="bookingTo" {...register("To")} placeholder='DD.MM.YYYY'/>
                 {errors.To && <span>{errors.To.message}</span>}
 
-                <StyledBookingButton>Send</StyledBookingButton>
+                <StyledBookingButton onClick={handleSubmit(onSubmit)}>Send</StyledBookingButton>
             </StyledBookingForm>
 
         </BookingFormContainer>

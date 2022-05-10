@@ -31,6 +31,7 @@ const Home = () => {
     }, [])
 
     return (
+        
         <>
         <HomeBody>
             <StyledHomeHeading>Find your <StyledHomeSpan>Nordic Light Hotel</StyledHomeSpan></StyledHomeHeading>
