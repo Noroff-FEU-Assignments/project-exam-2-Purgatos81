@@ -27,7 +27,7 @@ TargetHotel.propTypes = {
     id: PropTypes.number.isRequired,
     imgurl: PropTypes.string.isRequired,
     Name: PropTypes.string.isRequired,
-    Description: PropTypes.string.isRequired,
+    Description: PropTypes.string,
     Price: PropTypes.string.isRequired,
 };
 

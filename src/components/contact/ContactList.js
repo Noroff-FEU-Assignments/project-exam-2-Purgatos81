@@ -41,6 +41,7 @@ function ContactList() {
             {contacts.map(function (contact) {
                 console.log(contact.attributes);
                 return <TargetContact
+                key={contact.id} 
                 Name={contact.attributes.Name}
                 Email={contact.attributes.Email}
                 Message={contact.attributes.Message} />;

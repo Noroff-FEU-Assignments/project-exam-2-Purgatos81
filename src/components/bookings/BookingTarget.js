@@ -17,8 +17,8 @@ function TargetBooking({ Name, Email, From, To }) {
 TargetBooking.propTypes = {
     Name: PropTypes.string.isRequired,
     Email: PropTypes.string.isRequired,
-    From: PropTypes.number.isRequired,
-    To: PropTypes.number.isRequired,
+    From: PropTypes.string.isRequired,
+    To: PropTypes.string.isRequired,
 };
 
 export default TargetBooking;

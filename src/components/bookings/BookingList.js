@@ -41,6 +41,7 @@ function BookingList() {
             {bookings.map(function (booking) {
                 console.log(booking.attributes);
                 return <TargetBooking
+                key={booking.id} 
                 Name={booking.attributes.Name}
                 Email={booking.attributes.Email}
                 From={booking.attributes.From}
