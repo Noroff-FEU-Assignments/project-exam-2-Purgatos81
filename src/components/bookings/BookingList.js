@@ -42,6 +42,7 @@ function BookingList() {
                 console.log(booking.attributes);
                 return <TargetBooking
                 key={booking.id} 
+                Hotelname={booking.attributes.Hotelname}
                 Name={booking.attributes.Name}
                 Email={booking.attributes.Email}
                 From={booking.attributes.From}

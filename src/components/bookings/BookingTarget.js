@@ -3,10 +3,11 @@ import {
     StyledTargetBookingContainer
 } from "../styles/AdminStyles";
 
-function TargetBooking({ Name, Email, From, To }) {
+function TargetBooking({ Hotelname, Name, Email, From, To }) {
     return (
         <StyledTargetBookingContainer>
-            <h4>Name: {Name}</h4>
+            <h4>Hotel: {Hotelname}</h4>
+            <p>Name: {Name}</p>
             <p>Email: {Email}</p>
             <p>From: {From}</p>
             <p>To: {To}</p>
@@ -15,6 +16,7 @@ function TargetBooking({ Name, Email, From, To }) {
 }
 
 TargetBooking.propTypes = {
+    Hotelname: PropTypes.string.isRequired,
     Name: PropTypes.string.isRequired,
     Email: PropTypes.string.isRequired,
     From: PropTypes.string.isRequired,
