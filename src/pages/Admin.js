@@ -1,5 +1,5 @@
 import AuthContext from "../components/context/AuthContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import LoginForm from "../components/forms/LoginForm";
 import AddHotelForm from "../components/forms/AddHotelForm";
 import axios from "axios";
@@ -14,7 +14,10 @@ import {
     StyledMessagesContainer
 } from "../components/styles/AdminStyles";
 const Admin = () => {
-    const [auth, setAuth] = useContext(AuthContext);
+    const [auth] = useContext(AuthContext);
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     const sendNewHotel = async (formData) => {
         const options = {
             data: {

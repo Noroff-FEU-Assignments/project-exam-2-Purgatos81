@@ -6,9 +6,12 @@ import BookingForm from "../components/forms/BookingForm";
 import axios from "axios";
 import { BookingAPI } from "../components/utils/Api";
 import { GetHotelNameContext } from "../components/context/HotelnameContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 const Details = () => {
     const [bookedHotelName, setBookedHotelName] = useState("Test For Function");
+    useEffect(() => {
+        window.scrollTo(0, 0);
+      }, []);
     const sendBooking = async (formData) => {
         const options = {
             data: {
