@@ -1,17 +1,14 @@
 import { useState, useEffect } from "react";
 import TargetBooking from "./BookingTarget";
 import { BookingAPI } from "../utils/Api";
-
 function BookingList() {
     const [bookings, setBookings] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
     useEffect(function() {
         async function fetchData() {
             try {
                 const response = await fetch(BookingAPI);
-
                 if (response.ok) {
                     const json = await response.json();
                     console.log(json.data);
@@ -28,11 +25,9 @@ function BookingList() {
         }
         fetchData();
     }, []);
-
     if(loading) {
         return <div>Loading...</div>
     }
-
     if(error) {
         return <div>{error}</div>
     }
@@ -51,5 +46,4 @@ function BookingList() {
         </>
     );
 }
-
 export default BookingList;

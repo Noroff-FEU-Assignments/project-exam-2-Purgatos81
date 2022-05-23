@@ -16,12 +16,9 @@ import {
   StyledLoginInput,
   StyledLoginButton
 } from "../styles/LoginStyles";
- 
 const LoginForm = () => {
     const navigate = useNavigate();
-  
     const [auth, setAuth] = useContext(AuthContext);
-
     const {
       register,
       handleSubmit,
@@ -29,26 +26,20 @@ const LoginForm = () => {
     } = useForm({
       resolver: yupResolver(userLoginSchema),
     });
-  
     const loginUser = async (formData) => {
       const responseData = await axios.post(AUTH_URL, {
         identifier: formData.email,
         password: formData.password,
       });
-  
       console.log('Response Data: ', responseData);
-  
       setAuth(responseData.data);
       navigate('/admin');
     };
-  
     const onSubmit = (formData) => {
       console.log('Form Data: ', formData);
-  
       loginUser(formData).catch(console.error);
       console.log(auth);
     };
-  
     return (
       <LoginFormPageContainer>
         <LoginHeadingContainer>
@@ -65,11 +56,9 @@ const LoginForm = () => {
               placeholder='Your password...'
             />
             {errors.password && <span>{errors.password.message}</span>}
-    
             <StyledLoginButton>Loggin</StyledLoginButton>
         </StyledLoginForm>
       </LoginFormPageContainer>
     );
   };
-  
   export default LoginForm;

@@ -12,34 +12,29 @@ import {
 	StyledPriceH2,
 	StyledDetailPriceSpan,
 	StyledRatingContainer,
-	StyledRatingSpan
+	StyledRatingSpan,
+	StyledDetailHotelH1,
+	StyledDetailHotelP
 } from "../styles/DetailsStyles";
-
 function HotelDetails() {
     const [hotel, setHotel] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
 	const {bookedHotelName, setBookedHotelName} = useContext(GetHotelNameContext);
-
 	const { id } = useParams();
-
 	const url = HotelsAPI + "/" + id;
-
 	useEffect(
 		function () {
 			async function fetchData() {
 				try {
 					const response = await fetch(url);
 					console.log(url);
-
 					if (response.ok) {
 						const json = await response.json();
 						console.log(json.data);
 						setHotel(json.data);
 						setBookedHotelName(json.data.attributes.Name);
 						console.log(bookedHotelName);
-						
 					} else {
 						setError("An error occured");
 					}
@@ -56,19 +51,16 @@ function HotelDetails() {
 	if (loading) {
 		return <div>Loading...</div>;
 	}
-
 	if (error) {
 		return <div>An error occured: {error}</div>;
 	}
-	
 	return (
-		
 		<>
 			<StyledDetailsInfoContainer>
 				<DetailsImgStyles src={hotel.attributes.imgurl} />
 				<StyledTextContainer>
-					<h1>{hotel.attributes.Name}</h1>
-					<p>{hotel.attributes.Description}</p>
+					<StyledDetailHotelH1>{hotel.attributes.Name}</StyledDetailHotelH1>
+					<StyledDetailHotelP>{hotel.attributes.Description}</StyledDetailHotelP>
 				</StyledTextContainer>
 			</StyledDetailsInfoContainer>
 			<StyledPriceAndRatingContainer>
@@ -82,5 +74,4 @@ function HotelDetails() {
 		</>
 	);
 }
-
 export default HotelDetails;

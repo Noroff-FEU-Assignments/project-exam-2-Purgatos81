@@ -13,8 +13,6 @@ import {
     StyledBookingContainer,
     StyledMessagesContainer
 } from "../components/styles/AdminStyles";
-
-
 const Admin = () => {
     const [auth, setAuth] = useContext(AuthContext);
     const sendNewHotel = async (formData) => {
@@ -30,8 +28,6 @@ const Admin = () => {
         const responseData = await axios.post(HotelsAPI, options);
         console.log(responseData);
     };
-
-
     if(auth === null) {
         return (
             <>
@@ -39,7 +35,6 @@ const Admin = () => {
             </>
         );
     } else {
-
     return (
         <>
             <StyledBookingAndMessagesContainer>
@@ -61,5 +56,4 @@ const Admin = () => {
     );
     }
 };
-
 export default Admin;

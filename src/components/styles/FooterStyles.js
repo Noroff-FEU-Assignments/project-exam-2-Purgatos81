@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
 export const FooterContainer = styled.footer`
     display: flex;
     justify-content: space-between;
@@ -11,12 +10,10 @@ export const FooterContainer = styled.footer`
     height: 60px;
     background-color: #082E2F;
     padding: 0 80px;
-`
-
+`;
 export const FooterAdminContainer = styled.div`
 
 `;
-
 export const FooterIconsContainer = styled.div`
     width: 20%;
     display: flex;
@@ -24,7 +21,6 @@ export const FooterIconsContainer = styled.div`
     color: white;
     padding-right: 20px;
 `;
-
 export const FooterLink = styled(Link)`
     color: White;
     font-size: x-large;
@@ -32,7 +28,6 @@ export const FooterLink = styled(Link)`
     text-decoration: none;
     margin: 10px;
 `;
-
 export const FooterButton = styled.button`
     background-color: #082E2F;
     border: none;

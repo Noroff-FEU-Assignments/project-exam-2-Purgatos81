@@ -11,16 +11,13 @@ import { useNavigate } from "react-router-dom";
 import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
-
 const Footer = () => {
     const [auth, setAuth] = useContext(AuthContext);
     const navigate = useNavigate();
-
     function logout() {
         setAuth(null);
         navigate("/");
     }
-
     return (
         <FooterContainer>
             <FooterAdminContainer>
@@ -40,5 +37,4 @@ const Footer = () => {
         </FooterContainer>
     );
 };
-
 export default Footer;

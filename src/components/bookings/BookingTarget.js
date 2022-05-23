@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import {
     StyledTargetBookingContainer
 } from "../styles/AdminStyles";
-
 function TargetBooking({ Hotelname, Name, Email, From, To }) {
     return (
         <StyledTargetBookingContainer>
@@ -14,7 +13,6 @@ function TargetBooking({ Hotelname, Name, Email, From, To }) {
         </StyledTargetBookingContainer>
         );
 }
-
 TargetBooking.propTypes = {
     Hotelname: PropTypes.string.isRequired,
     Name: PropTypes.string.isRequired,
@@ -22,5 +20,4 @@ TargetBooking.propTypes = {
     From: PropTypes.string.isRequired,
     To: PropTypes.string.isRequired,
 };
-
 export default TargetBooking;

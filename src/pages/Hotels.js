@@ -4,7 +4,6 @@ import {
     StyledHotelsContainer,
     StyledHotelsHeading
 } from "../components/styles/HotelTargetStyles"
-
 const Hotels = () => {
     return (
         <StyledHotelsMainContainer>
@@ -15,5 +14,4 @@ const Hotels = () => {
         </StyledHotelsMainContainer>
     );
 };
-
 export default Hotels;

@@ -1,5 +1,4 @@
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import {
     StyledLinkContainer,
     StyledHotelLink,
@@ -9,7 +8,6 @@ import {
     StyledHotelPriceP,
     StyledHotelPriceSpan
 } from "../styles/HotelTargetStyles";
-
 function TargetHotel({ id, imgurl, Name, Description, Price }) {
     return (
             <StyledLinkContainer>
@@ -22,7 +20,6 @@ function TargetHotel({ id, imgurl, Name, Description, Price }) {
             </StyledLinkContainer>
     );
 }
-
 TargetHotel.propTypes = {
     id: PropTypes.number.isRequired,
     imgurl: PropTypes.string.isRequired,
@@ -30,6 +27,5 @@ TargetHotel.propTypes = {
     Description: PropTypes.string,
     Price: PropTypes.string.isRequired,
 };
-
 export default TargetHotel;
 

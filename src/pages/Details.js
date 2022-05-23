@@ -5,13 +5,10 @@ import {
 import BookingForm from "../components/forms/BookingForm";
 import axios from "axios";
 import { BookingAPI } from "../components/utils/Api";
-
 import { GetHotelNameContext } from "../components/context/HotelnameContext";
-import { useState, useEffect } from "react";
-
+import { useState } from "react";
 const Details = () => {
     const [bookedHotelName, setBookedHotelName] = useState("Test For Function");
-    
     const sendBooking = async (formData) => {
         const options = {
             data: {
@@ -25,17 +22,13 @@ const Details = () => {
         const responseData = await axios.post(BookingAPI, options);
         console.log(responseData);
     };
-   
     return (
-
             <DetailsBody>
                 <GetHotelNameContext.Provider value={{ bookedHotelName, setBookedHotelName}}>
                     <HotelDetails />
                     <BookingForm sendBooking={sendBooking}/>
                 </GetHotelNameContext.Provider>
             </DetailsBody>
-
     );
 };
-
 export default Details;

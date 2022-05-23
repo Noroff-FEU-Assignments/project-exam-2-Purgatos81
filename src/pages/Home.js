@@ -12,13 +12,9 @@ import {
     StyledHotelsContainer,
     StyledHotelsHeading
 } from "../components/styles/HotelTargetStyles"
- 
-
-
 const Home = () => {
     const [hotels, setHotels] = useState ([])
     const [error, setError] = useState("");
-
     useEffect(() => {
         axios.get(HotelsAPI)
         .then((results) => {
@@ -29,9 +25,7 @@ const Home = () => {
             setError(error.message)
         })
     }, [])
-
     return (
-        
         <>
         <HomeBody>
             <StyledHomeHeading>Find your <StyledHomeSpan>Nordic Light Hotel</StyledHomeSpan></StyledHomeHeading>
@@ -46,5 +40,4 @@ const Home = () => {
         </>
     );
 };
-
 export default Home;

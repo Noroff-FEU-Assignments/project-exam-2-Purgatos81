@@ -1,10 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
 export const SearchBarContainer = styled.div`
-
 `;
-
 export const SearchInputs = styled.div`
     margin-top: 25px;
     display: flex;
@@ -12,7 +9,6 @@ export const SearchInputs = styled.div`
         outline: none;
     }
 `;
-
 export const SearchTextBox = styled.input`
     background-color: white;
     border: 0;
@@ -24,7 +20,6 @@ export const SearchTextBox = styled.input`
     height: 60px;
     width: 300px;
 `;
-
 export const DataResults = styled.div`
   margin-top: 5px;
   width: 300px;
@@ -35,7 +30,6 @@ export const DataResults = styled.div`
   overflow: hidden;
   overflow-y: auto;
 `;
-
 export const StyledSearchIcon = styled.div`
   height: 60px;
   width: 50px;
@@ -43,7 +37,6 @@ export const StyledSearchIcon = styled.div`
   display: grid;
   place-items: center;
 `;
-
 export const StyledSearchHotelLink = styled(Link)`
     text-decoration: none;
 `;

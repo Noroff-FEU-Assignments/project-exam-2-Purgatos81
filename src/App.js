@@ -10,9 +10,7 @@ import Footer from './components/layouts/Footer';
 import { AuthProvider } from './components/context/AuthContext';
 import GlobalStyle from './components/styles/GlobalStyles';
 
-
 function App() {
-
   return (
     <>
       <AuthProvider>
@@ -33,5 +31,4 @@ function App() {
     </>
   );
 }
-
 export default App;

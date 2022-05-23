@@ -1,9 +1,7 @@
 import styled from "styled-components";
-
 export const DetailsBody = styled.div`
     min-height: 100vh;
 `;
-
 export const StyledDetailsInfoContainer = styled.div`
 
     @media (min-width: 701px) {
@@ -15,7 +13,6 @@ export const StyledDetailsInfoContainer = styled.div`
         flex-direction: column;
     }
 `;
-
 export const DetailsImgStyles = styled.img`
         @media (min-width: 701px) {
         max-width: 50%;
@@ -23,7 +20,6 @@ export const DetailsImgStyles = styled.img`
         border-radius: 5px;
     }
 `;
-
 export const StyledTextContainer = styled.div`
     padding-top: 20px;
         @media (min-width: 701px) {
@@ -34,33 +30,33 @@ export const StyledTextContainer = styled.div`
         margin-right: 10%;
     }
 `;
-
 export const StyledPriceAndRatingContainer = styled.div`
     display: flex;
     justify-content: space-between;
     margin-left: 10%;
     margin-right: 10%;
 `;
-
 export const StyledPriceContainer = styled.div`
     margin-bottom: 40px;
     display: flex;
 `;
-
+export const StyledDetailHotelH1 = styled.h1`
+    font-Family: 'Ubuntu', Sans-Serif;
+`;
+export const StyledDetailHotelP = styled.p`
+    font-Family: 'Open Sans', Sans-Serif;
+`;
 export const StyledPriceH2 = styled.h2`
 
 `;
-
 export const StyledDetailPriceSpan = styled.span`
     color: Black;
     font-style: italic;
 `;
-
 export const StyledRatingContainer = styled.div`
     display: flex;
     justify-content: space-between;
 `;
-
 export const StyledRatingSpan = styled.span`
     background-color: #58D1AE;
     padding: 5px 10px;

@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import {
     StyledTargetContactContainer
 } from "../styles/AdminStyles";
-
 function TargetContact({ Name, Email, Message }) {
     return (
     <StyledTargetContactContainer>
@@ -12,11 +11,9 @@ function TargetContact({ Name, Email, Message }) {
     </StyledTargetContactContainer>
     );
 }
-
 TargetContact.propTypes = {
     Name: PropTypes.string.isRequired,
     Email: PropTypes.string.isRequired,
     Message: PropTypes.string.isRequired,
 };
-
 export default TargetContact;

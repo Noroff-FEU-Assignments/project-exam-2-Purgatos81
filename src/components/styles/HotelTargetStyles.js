@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
 export const StyledHotelsMainContainer = styled.div`
     min-height: 100vh;
     display: flex;
@@ -8,19 +7,15 @@ export const StyledHotelsMainContainer = styled.div`
     align-items: center;
     background-color: #58D1AE90;
 `;
-
 export const StyledHotelsHeading = styled.h1`
     color: #082E2F;
 `;
-
-
 export const StyledHotelsContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     padding: 20px 5% 20px 5%;
 `;
-
 export const StyledLinkContainer = styled.div`
     max-width: 500px;
     min-width: 200px;
@@ -35,31 +30,25 @@ export const StyledLinkContainer = styled.div`
         box-shadow: 20px 20px 10px grey;
     }
 `;
-
 export const StyledHotelLink = styled(Link)`
     text-decoration: none;
 `;
-
 export const StyledHotelImage = styled.img`
     max-width: 500px;
     border-radius: 5px 5px 0 0;
 `;
-
 export const StyledListedHotelHeading = styled.h3`
     color: Black;
     margin-left: 20px;
 `;
-
 export const StyledHotelDescriptionP = styled.p`
     color: Black;
     margin-left: 20px;
 `;
-
 export const StyledHotelPriceP = styled.p`
     color: Black;
     margin-left: 20px;
 `;
-
 export const StyledHotelPriceSpan = styled.span`
     color: Black;
     font-style: italic;

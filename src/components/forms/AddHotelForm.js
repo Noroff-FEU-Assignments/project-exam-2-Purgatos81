@@ -11,21 +11,17 @@ import {
     StyledAddHotelFormTextarea,
     StyledAddHotelFormButton
  } from "../styles/AdminStyles";
-
 const AddHotelForm = ({sendNewHotel}) => {
     const {register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(AddHotelSchema),
     });
-
     const onSubmit = (FormData) => {
         console.log('Form Data: ', FormData);
 
         sendNewHotel(FormData).catch(console.error);
         alert('Hotel added');
     };
-
     console.log(errors);
-
     return (
         <AddHotelFormContainer>
             <AddHotelHeadingContainer>
@@ -57,5 +53,4 @@ const AddHotelForm = ({sendNewHotel}) => {
         </AddHotelFormContainer>
     );
 }
-
 export default AddHotelForm;

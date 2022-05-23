@@ -1,17 +1,14 @@
 import { useState, useEffect } from "react";
 import TargetHotel from "./HotelTarget";
 import { HotelsAPI } from "../utils/Api";
-
 function FeaturedHotelList() {
     const [hotels, setHotels] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
     useEffect(function() {
         async function fetchData() {
             try {
                 const response = await fetch(HotelsAPI);
-
                 if (response.ok) {
                     const json = await response.json();
                     console.log(json.data);
@@ -28,11 +25,9 @@ function FeaturedHotelList() {
         }
         fetchData();
     }, []);
-
     if(loading) {
         return <div>Loading...</div>
     }
-
     if(error) {
         return <div>{error}</div>
     }
@@ -52,5 +47,4 @@ function FeaturedHotelList() {
         </>
     );
 }
-
 export default FeaturedHotelList;

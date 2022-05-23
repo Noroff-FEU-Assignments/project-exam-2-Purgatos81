@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 import TargetContact from "./ContactTarget";
 import { ContactAPI } from "../utils/Api";
-
 function ContactList() {
     const [contacts, setContacts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
     useEffect(function() {
         async function fetchData() {
             try {
@@ -28,7 +26,6 @@ function ContactList() {
         }
         fetchData();
     }, []);
-
     if(loading) {
         return <div>Loading...</div>
     }
@@ -49,5 +46,4 @@ function ContactList() {
         </>
     );
 }
-
 export default ContactList;

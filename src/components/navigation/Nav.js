@@ -11,10 +11,8 @@ import {
     OpenMenuButton,
     NavExtendedContainer 
 } from "../styles/NavStyles";
-
 const Nav = () => {
     const [openNav, setOpenNav] = useState(false);
-
     return (
         <NavContainer extendNavbar={openNav}>
             <NavInnerContainer>
@@ -46,5 +44,4 @@ const Nav = () => {
         </NavContainer>
     );
 };
-
 export default Nav;
