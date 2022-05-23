@@ -28,13 +28,10 @@ function HotelDetails() {
 			async function fetchData() {
 				try {
 					const response = await fetch(url);
-					console.log(url);
 					if (response.ok) {
 						const json = await response.json();
-						console.log(json.data);
 						setHotel(json.data);
 						setBookedHotelName(json.data.attributes.Name);
-						console.log(bookedHotelName);
 					} else {
 						setError("An error occured");
 					}

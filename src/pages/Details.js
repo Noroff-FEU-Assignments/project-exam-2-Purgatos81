@@ -15,7 +15,7 @@ const Details = () => {
     const sendBooking = async (formData) => {
         const options = {
             data: {
-                Hotelname: formData.Hotelname,
+                Hotelname: bookedHotelName,
                 Name: formData.Name,
                 Email: formData.Email,
                 From: formData.From,
@@ -23,7 +23,6 @@ const Details = () => {
             },
         };
         const responseData = await axios.post(BookingAPI, options);
-        console.log(responseData);
     };
     return (
             <DetailsBody>

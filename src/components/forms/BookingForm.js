@@ -21,8 +21,6 @@ const BookingForm = ({sendBooking}) => {
         resolver: yupResolver(BookingSchema),
     });
     const onSubmit = (formData) => {
-        console.log('Form Data: ', formData);
-
         sendBooking(formData).catch(console.error);
         alert('Your booking has been sent!');
     };
