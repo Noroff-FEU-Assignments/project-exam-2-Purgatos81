@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { BookingSchema } from "../utils/yupSchemas";
@@ -9,11 +9,10 @@ import {
     StyledBookingForm,
     StyledBookingLabel,
     StyledBookingAsterix,
+    StyledBookingHotelInput,
     StyledBookingInput,
-    StyledBookingTextarea,
     StyledBookingButton
 } from "../styles/BookingStyles";
-import { Hotel } from "@mui/icons-material";
 import { GetHotelNameContext } from "../context/HotelnameContext";
 const BookingForm = ({sendBooking}) => {
     const {bookedHotelName, setBookedHotelName} = useContext(GetHotelNameContext);
@@ -31,7 +30,8 @@ const BookingForm = ({sendBooking}) => {
                 <BookingHeading>Book it now!</BookingHeading>
             </BookingHeadingContainer>
             <StyledBookingForm>
-                <input {...register("Hotelname")} value={bookedHotelName}/>
+                <StyledBookingLabel HTMLFor="Hotelname">Book your stay at:</StyledBookingLabel>
+                <StyledBookingHotelInput {...register("Hotelname")} value={bookedHotelName}/>
                 <StyledBookingLabel HTMLFor="bookingName">Your name<StyledBookingAsterix> *</StyledBookingAsterix></StyledBookingLabel>
                 <StyledBookingInput id="bookingName" {...register("Name")} placeholder='Your name...'/>
                 {errors.Name && <span>{errors.Name.message}</span>}
@@ -39,10 +39,10 @@ const BookingForm = ({sendBooking}) => {
                 <StyledBookingInput id="bookingEmail" {...register("Email")} placeholder='Your email...'/>
                 {errors.Email && <span>{errors.Email.message}</span>}
                 <StyledBookingLabel HTMLFor="bookingFrom">From<StyledBookingAsterix> *</StyledBookingAsterix></StyledBookingLabel>
-                <StyledBookingInput id="bookingFrom" {...register("From")} placeholder='DD.MM.YYYY'/>
+                <StyledBookingInput id="bookingFrom" {...register("From")} placeholder='MM.DD.YYYY'/>
                 {errors.From && <span>{errors.From.message}</span>}
                 <StyledBookingLabel HTMLFor="bookingTo">To<StyledBookingAsterix> *</StyledBookingAsterix></StyledBookingLabel>
-                <StyledBookingInput id="bookingTo" {...register("To")} placeholder='DD.MM.YYYY'/>
+                <StyledBookingInput id="bookingTo" {...register("To")} placeholder='MM.DD.YYYY'/>
                 {errors.To && <span>{errors.To.message}</span>}
                 <StyledBookingButton onClick={handleSubmit(onSubmit)}>Send</StyledBookingButton>
             </StyledBookingForm>

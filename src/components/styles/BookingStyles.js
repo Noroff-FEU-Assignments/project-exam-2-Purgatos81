@@ -28,6 +28,14 @@ export const StyledBookingLabel = styled.label`
 export const StyledBookingAsterix = styled.span`
     color: red;
 `;
+export const StyledBookingHotelInput = styled.input`
+    padding: 5px;
+    margin: 15px 0px;
+    border: none;
+    font-size: large;
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+`;
 export const StyledBookingInput = styled.input`
     padding: 5px;
     margin: 15px 0px;
