@@ -24,7 +24,6 @@ const Admin = () => {
                 Name: formData.Name,
                 Description: formData.Description,
                 Price: formData.Price,
-                Information: formData.Information,
                 imgurl: formData.imgurl,
             },
         };

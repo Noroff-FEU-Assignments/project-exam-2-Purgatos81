@@ -36,10 +36,6 @@ const AddHotelForm = ({sendNewHotel}) => {
                 <StyledAddHotelFormInput id="hotelDescription" {...register("Description")} placeholder='Description of Hotel...'/>
                 {errors.Description && <span>{errors.Description.message}</span>}
 
-                <StyledAddHotelFormLabel HTMLFor="hotelInformation">Information on Hotel</StyledAddHotelFormLabel>
-                <StyledAddHotelFormTextarea id="hotelInformation" {...register("Information")} placeholder='Information on Hotel...'/>
-                {errors.Information && <span>{errors.Information.message}</span>}
-
                 <StyledAddHotelFormLabel HTMLFor="hotelPrice">Price of Hotel</StyledAddHotelFormLabel>
                 <StyledAddHotelFormInput id="hotelPrice" {...register("Price")} placeholder='Price of Hotel...'/>
                 {errors.Price && <span>{errors.Price.message}</span>}

@@ -12,7 +12,6 @@ export const AddHotelSchema = yup.object().shape({
   Name: yup.string().required("Please enter a name"),
   Description: yup.string().required("Please enter a description"),
   Price: yup.number().required("Please enter price"),
-  Information: yup.string().required("Please enter information"),
   imgurl: yup.string().required("Please enter image URL"),
 });
 export const BookingSchema = yup.object().shape({
